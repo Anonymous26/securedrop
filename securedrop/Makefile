@@ -12,7 +12,8 @@ lint-full:  ## Run the python linter with nothing disabled
 
 .PHONY: test
 test: ## Run the test suite in a dockerized environment
-	./bin/dev-shell ./bin/run-test -k test_delete_collections tests/test_integration.py
+	./bin/dev-shell ./bin/run-test -v $${TESTFILES:-tests}
+	#bash -x ./bin/dev-shell ./bin/run-test -s -v -k test_delete_collections tests/test_integration.py
 
 .PHONY: dev
 dev: ## Run the dev server

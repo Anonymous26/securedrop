@@ -70,8 +70,9 @@ def async(f):
     return wrapper
 
 
-@async
+#@async
 def async_genkey(filesystem_id, codename):
+    FAIL
     crypto_util.genkeypair(filesystem_id, codename)
 
     # Register key generation as update to the source, so sources will

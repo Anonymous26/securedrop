@@ -22,7 +22,7 @@ function urandom() {
 function append_to_exit() {
     local existing
     existing="$(trap | sed -n "/EXIT\$/s/^trap -- '\(.*\)' EXIT/\1/p")"
-    trap "$existing ; $1" EXIT
+    trap "${existing:-true} ; $1" EXIT
 }
 
 function maybe_create_config_py() {
